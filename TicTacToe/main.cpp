@@ -8,7 +8,9 @@
 
 #include <bits/stdc++.h> // lets include this cool header
 
-using namespace std; // and this as well to remove the std which I have no idea what it does or what it is however those double dots std::cout remind me of the classes and OOP
+// and this as well to remove the std which I have no idea what it does or what it is however those double dots std::cout remind me of the classes and OOP
+using namespace std;
+
 int main() {
     // insert code here...
     cout << "Hala worled hala !"<<endl;
