@@ -6,10 +6,11 @@
 //  Copyright © 2021 Gharseldin. All rights reserved.
 //
 
-#include <iostream>
+#include <bits/stdc++.h> // lets include this cool header
 
-int main(int argc, const char * argv[]) {
+using namespace std; // and this as well to remove the std which I have no idea what it does or what it is however those double dots std::cout remind me of the classes and OOP
+int main() {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    cout << "Hala worled hala !"<<endl;
     return 0;
 }
