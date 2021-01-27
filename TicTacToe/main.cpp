@@ -8,7 +8,7 @@
 
 // lets include this cool header
 #include <bits/stdc++.h>
-
+#include "Game.h"
 // and this as well to remove the std which I have no idea what it does or what it is however those double dots std::cout remind me of the classes and OOP
 using namespace std;
 
@@ -17,6 +17,10 @@ bool checkForWinner(char arr[][3]);
 
 int main()
 {
+    Game newGame;
+    newGame.start();
+    
+    /*
     char arr[3][3], player = 'X';
     int x, y, counter = 0;
     for (int i = 0; i < 3; i++)
@@ -45,6 +49,7 @@ int main()
             player = (player == 'X') ? 'O' : 'X';
         }
     }
+     */
     return 0;
 }
 
