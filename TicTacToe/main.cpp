@@ -72,9 +72,8 @@ void printBoard(int x, int y, char arr[][3])
         for (int j = 0; j < 3; j++)
         {
             cout << " " << arr[i][j] << " "
-                 << "|";
+                 << ( j == 2 ? "\n" : "|" );
         }
-        cout << endl
-             << "------------" << endl;
+        cout << (i == 2 ? "" : "------------") << endl;
     }
 }
