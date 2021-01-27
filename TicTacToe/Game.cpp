@@ -32,10 +32,9 @@ bool Game::invalidMove(int x, int y){
 void Game::printBoard()
 {
     for (int i = 0; i < 3; i++){
-        for (int j = 0; j < 3; j++){
-            cout << " " << board[i][j] << " " << "|";
-        }
-        cout << endl << "------------" << endl;
+        for (int j = 0; j < 3; j++)
+            cout << " " << board[i][j] << " "<< ( j == 2 ? "\n" : "|" );
+        cout << (i == 2 ? "" : "------------") << endl;
     }
 }
 
