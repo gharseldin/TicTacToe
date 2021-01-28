@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		34D6ECD425BE0C4100180B18 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34D6ECD325BE0C4100180B18 /* main.cpp */; };
 		34D6ECDC25C1010900180B18 /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34D6ECDA25C1010900180B18 /* Game.cpp */; };
+		3E7E6FC525C1A0A90076DF63 /* Coordinates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E6FC325C1A0A90076DF63 /* Coordinates.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		34D6ECD325BE0C4100180B18 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		34D6ECDA25C1010900180B18 /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		34D6ECDB25C1010900180B18 /* Game.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		3E7E6FC325C1A0A90076DF63 /* Coordinates.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Coordinates.cpp; sourceTree = "<group>"; };
+		3E7E6FC425C1A0A90076DF63 /* Coordinates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinates.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				34D6ECD325BE0C4100180B18 /* main.cpp */,
 				34D6ECDA25C1010900180B18 /* Game.cpp */,
 				34D6ECDB25C1010900180B18 /* Game.h */,
+				3E7E6FC325C1A0A90076DF63 /* Coordinates.cpp */,
+				3E7E6FC425C1A0A90076DF63 /* Coordinates.h */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E7E6FC525C1A0A90076DF63 /* Coordinates.cpp in Sources */,
 				34D6ECD425BE0C4100180B18 /* main.cpp in Sources */,
 				34D6ECDC25C1010900180B18 /* Game.cpp in Sources */,
 			);
