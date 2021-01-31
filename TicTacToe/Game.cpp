@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include "Game.h"
+#include "Coordinates.h"
 
 using namespace::std;
 
@@ -25,7 +26,29 @@ void Game::initializeBaord(){
     }
 }
 
-bool Game::invalidMove(int x, int y){
+/**
+ Now we are able to define the CaptureInput class in a separate function and return a
+ Coordinates object. Before this we couldn't create a separete function to capture input
+ becauce we couldn't return x and y because functions only return one value. A function
+ cannot return two or three values unless you bundle them up in an array or object from a class
+ */
+Coordinates Game::captureInput(){
+    int x, y;
+    cout << "Please enter your coordinates: " << endl;
+    cin >> x >> y;
+    x--;
+    y--;
+    Coordinates co( x , y );
+    return co;
+}
+
+/**
+ we adjusted the invalidMove function to just take a Coordinates object then use it to find if the move is
+ invalid or not. Inside the function it will pick out the data it needs from this object and use it.
+ */
+bool Game::invalidMove(Coordinates co){
+    int x = co.getX();
+    int y = co.getY();
     return (x < 0 || y < 0) || (x > 2 || y > 2) || board[x][y] == 'X' || board[x][y] == 'O';
 }
 
@@ -62,23 +85,21 @@ void Game::changeTurn(){
 void Game::start(){
     while (true)
     {
-        int x, y, counter=0;
-        cout << "Please enter your coordinates: " << endl;
-        cin >> x >> y;
-        x--;
-        y--;
-        counter++;
-        if (invalidMove(x,y))
+        Coordinates co = captureInput();
+        if (invalidMove(co))
             cout << "Invalid coordinates, please try again!!" << endl
                  << endl;
         else
         {
-            board[x][y] = player;
+            // Here I use the co.getX() and co.getY() to check a place on the board
+            board[co.getX()][co.getY()] = player;
             printBoard();
             cout << endl;
-            if (checkForWinner() && counter > 5)
+            if (checkForWinner()){
                 cout << "Congratulations Player " << player << " You Won !!!" << endl;
-            changeTurn();
+                // we need to break here so the game ends once a player wins.
+                break;
+            }changeTurn();
         }
     }
 }

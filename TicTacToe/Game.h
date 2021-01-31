@@ -10,6 +10,7 @@
 #define Game_h
 
 #include <stdio.h>
+#include "Coordinates.h"
 
 class Game{
     /**
@@ -25,9 +26,11 @@ private:
     char **board;
     char player;
     
+    
     void initializeBaord();
+    Coordinates captureInput();
     void printBoard();
-    bool invalidMove(int x, int y);
+    bool invalidMove(Coordinates co);
     bool checkForWinner();
     void changeTurn();
     
