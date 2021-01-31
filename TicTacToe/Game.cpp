@@ -52,6 +52,16 @@ bool Game::invalidMove(Coordinates co){
     return (x < 0 || y < 0) || (x > 2 || y > 2) || board[x][y] == 'X' || board[x][y] == 'O';
 }
 
+bool Game::checkNoMoves(){
+    bool noMoves = true;
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            if (board[i][j]!='X'||board[i][j]!='O')
+                noMoves = false;
+    return noMoves;
+}
+
+
 void Game::printBoard()
 {
     for (int i = 0; i < 3; i++){
@@ -66,14 +76,15 @@ bool Game::checkForWinner()
     bool weHaveWinner = 0;
     for (int i = 0; i < 3; i++)
     {
-        if (board[0][i] == board[1][i] && board[1][i] == board[2][i])
+        // since we removed the counter we need to update the statement to implicitly specify that the points on board need to be either X or O to have a winner.
+        if (board[0][i] == board[1][i] && board[1][i] == board[2][i] && (board[0][i] == 'X' || board[0][i] == 'O'))
         weHaveWinner = 1; // rows
-        else if (board[i][0] == board[i][1] && board[i][1] == board[i][2])
+        else if (board[i][0] == board[i][1] && board[i][1] == board[i][2] && (board[i][0] == 'X' || board[i][0] == 'O'))
         weHaveWinner = 1; // columns
     }
-    if (board[0][0] == board[1][1] && board[1][1] == board[2][2])
+    if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && (board[0][0] == 'X' || board[0][0] == 'O'))
         weHaveWinner = 1;
-    else if (board[0][2] == board[1][1] && board[1][1] == board[2][0])
+    else if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && (board[0][2] == 'X' || board[0][2] == 'O'))
         weHaveWinner = 1;
     return weHaveWinner;
 }
